@@ -1,0 +1,18 @@
+.container-dashboard{
+    background:linear-gradient(120deg,#C04848,#480048);
+    width:100%;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.dashboard-head{
+    font-family: "Bebas Neue", sans-serif;
+}
+.dashboard-box{
+    background-color: white;
+    padding:35px;
+    border-radius: 30px;
+    width:40%;
+}
