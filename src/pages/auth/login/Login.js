@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import "./Login.css";
 
 const Login = () => {
@@ -71,10 +72,15 @@ const Login = () => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Show Password" onChange={handleShowPassword} checked={showPassword} />
         </Form.Group>
+        <div className="btn">
         <Button variant="primary" type="submit">
           Login
         </Button>
+        </div>
       </Form>
+      <div className="mt-3">
+          <Link to="/forgot-password">Forgot Password?</Link>
+        </div>
       </div>
     </div>
   )
