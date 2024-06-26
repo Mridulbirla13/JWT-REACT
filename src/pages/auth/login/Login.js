@@ -79,7 +79,7 @@ const Login = () => {
         </div>
       </Form>
       <div className="mt-3">
-          <Link to="/forgot-password">Forgot Password?</Link>
+          <Link to="/forgot-password" className='fgtxt'>Forgot Password?</Link>
         </div>
       </div>
     </div>
