@@ -15,7 +15,7 @@ const Navibar = () => {
     <div>
       <Navbar bg={token ? "white": "dark"} data-bs-theme={token ? "light" : "dark"} style={{fontFamily: "Bebas Neue"}}>
         <Container>
-          <Navbar.Brand href="#home" style={{fontSize: "25px", fontWeight:"400"}}>{token? "Logged-In": "Not-LoggedIn"}</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/login" style={{fontSize: "25px", fontWeight:"400"}}>{token? "Logged-In": "Not-LoggedIn"}</Navbar.Brand>
           <Nav className="ml-auto">
             {token?(
               <>

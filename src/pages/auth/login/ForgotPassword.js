@@ -20,7 +20,7 @@ const ForgotPassword = () => {
         });
         const result = await response.json();
         alert(result.message);
-        navigate("/register");
+        navigate("/reset-password");
       } catch (error) {
         console.error(error.message);
       }
