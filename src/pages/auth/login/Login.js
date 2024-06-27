@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import "./Login.css";
 
 const Login = () => {
@@ -78,9 +78,9 @@ const Login = () => {
         </Button>
         </div>
       </Form>
-      <div className="mt-3">
+      {/* <div className="mt-3">
           <Link to="/forgot-password" className='fgtxt'>Forgot Password?</Link>
-        </div>
+        </div> */}
       </div>
     </div>
   )

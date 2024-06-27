@@ -76,9 +76,11 @@ const Signup = () => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Show Password" onChange={handleShowPassword} checked={showPassword}/>
         </Form.Group>
+        <div className="btn">
         <Button variant="primary" type="submit">
           Signup
         </Button>
+        </div>
       </Form>
       </div>
     </div>

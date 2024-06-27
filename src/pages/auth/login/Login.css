@@ -8,6 +8,10 @@
 
 }
 
+.btn{
+    display:flex;
+    justify-content: center;
+}
 .login-box{
     display:flex;
     flex-direction: column;

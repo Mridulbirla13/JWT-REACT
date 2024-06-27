@@ -13,12 +13,13 @@ const Dashboard = () => {
   useEffect(()=>{
     const fetchUsers = async () => {
       try{
-        const response = await fetch("http://localhost:5000/api/users",{
+        const response = await fetch("https://jwt-node.onrender.com/api/users",{
           headers:{
             Authorization: `Bearer ${token}`
           }
         })
         const result = await response.json();
+        console.log("DATA -- ",result)
         setUsers(result);
       } catch(error){
         console.log(error)
@@ -30,6 +31,8 @@ const Dashboard = () => {
       navigate("/login")
     }
   },[token, navigate]);
+
+  console.log("users -- ", users);
   return (
     <div className='container-dashboard'>
       <div className="dashboard-box">
