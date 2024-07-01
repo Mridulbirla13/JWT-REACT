@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import "./Signup.css"
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import GitHubButton from '../GitHubButton';
+import GoogleButton from '../GoogleButton';
 
 const Signup = () => {
   const navigate= useNavigate();
@@ -28,7 +30,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://jwt-node.onrender.com/user/register",{
+      const response = await fetch("http://localhost:5000/user/register",{
         method:"POST",
         headers:{
           "Content-Type":"application/json"
@@ -80,6 +82,10 @@ const Signup = () => {
         <Button variant="primary" type="submit">
           Signup
         </Button>
+        </div>
+        <div className="gauth">
+          <GoogleButton />
+          <GitHubButton />
         </div>
       </Form>
       </div>

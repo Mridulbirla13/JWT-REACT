@@ -5,9 +5,20 @@ import Navbar from './pages/Navibar/Navibar';
 import Dashboard from './pages/dashboard/Dashboard';
 // import ForgotPassword from './pages/auth/login/ForgotPassword';
 // import ResetPassword from './pages/auth/login/resetPassword';
-
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
  
 function App() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+    if (token) {
+      localStorage.setItem('token', token);
+      navigate('/dashboard');
+    }
+  }, [navigate]);
   return (
     <>
       <Navbar></Navbar>

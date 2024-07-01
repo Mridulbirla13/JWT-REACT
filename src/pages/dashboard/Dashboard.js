@@ -1,65 +1,69 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import { Table, Row, Col } from 'react-bootstrap';
-import './Dashboard.css'
+import './Dashboard.css';
 
 const Dashboard = () => {
-
   const token = localStorage.getItem("token");
-  const [users,setUsers] = useState([]);
+  const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(()=>{
+  useEffect(() => {
     const fetchUsers = async () => {
-      try{
-        const response = await fetch("https://jwt-node.onrender.com/api/users",{
-          headers:{
+      try {
+        const response = await fetch("http://localhost:5000/api/users", {
+          headers: {
             Authorization: `Bearer ${token}`
           }
-        })
+        });
         const result = await response.json();
-        console.log("DATA -- ",result)
+        console.log("API Response -- ", result);
         setUsers(result);
-      } catch(error){
-        console.log(error)
+      } catch (error) {
+        console.log("Error fetching users -- ", error);
       }
-    }
-    if(token)
+    };
+    if (token) {
       fetchUsers();
-    else{
-      navigate("/login")
+    } else {
+      navigate("/login");
     }
-  },[token, navigate]);
+  }, [token, navigate]);
 
   console.log("users -- ", users);
   return (
     <div className='container-dashboard'>
       <div className="dashboard-box">
-      <Row>
-        <Col>
-          <h1 className='dashboard-head'>Dashboard</h1>
-          <Table striped bordered hover responsive>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user)=>(
-                <tr key = {user._id}>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
+        <Row>
+          <Col>
+            <h1 className='dashboard-head'>Dashboard</h1>
+            <Table striped bordered hover responsive>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
-        </Col>
-      </Row>
+              </thead>
+              <tbody>
+                {Array.isArray(users) && users.length > 0 ? (
+                  users.map((user) => (
+                    <tr key={user._id}>
+                      <td>{user.name}</td>
+                      <td>{user.email}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="2">No users found</td>
+                  </tr>
+                )}
+              </tbody>
+            </Table>
+          </Col>
+        </Row>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

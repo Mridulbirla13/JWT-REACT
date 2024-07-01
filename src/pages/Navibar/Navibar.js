@@ -13,9 +13,11 @@ const Navibar = () => {
   }
   return (
     <div>
-      <Navbar bg={token ? "white": "dark"} data-bs-theme={token ? "light" : "dark"} style={{fontFamily: "Bebas Neue"}}>
+      <Navbar bg={token ? "white": "dark"} expand="lg" data-bs-theme={token ? "light" : "dark"} style={{fontFamily: "Bebas Neue"}}>
         <Container>
-          <Navbar.Brand as={Link} to="/login" style={{fontSize: "25px", fontWeight:"400"}}>{token? "Logged-In": "Not-LoggedIn"}</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/login" style={{fontSize: "25px", fontWeight:"400"}}>{token? "Logged-In": "Not-LoggedIn"} |</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             {token?(
               <>
@@ -30,6 +32,8 @@ const Navibar = () => {
             )}
             
           </Nav>
+          </Navbar.Collapse>
+          
         </Container>
       </Navbar>
     </div>
