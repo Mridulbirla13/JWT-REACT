@@ -84,9 +84,9 @@ const Login = () => {
           <GitHubButton />
         </div>
       </Form>
-      <div className="mt-3">
+      {/* <div className="mt-3">
           <Link to="/forgot-password" className='fgtxt'>Forgot Password?</Link>
-        </div>
+        </div> */}
       </div>
     </div>
   )
