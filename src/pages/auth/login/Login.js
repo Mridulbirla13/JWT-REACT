@@ -31,7 +31,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/auth/login",{
+      const response = await fetch("https://jwt-node.onrender.com/auth/login",{
         method:"POST",
         headers:{
           "Content-Type":"application/json"
@@ -84,9 +84,9 @@ const Login = () => {
           <GitHubButton />
         </div>
       </Form>
-      {/* <div className="mt-3">
+      <div className="mt-3">
           <Link to="/forgot-password" className='fgtxt'>Forgot Password?</Link>
-        </div> */}
+        </div>
       </div>
     </div>
   )
