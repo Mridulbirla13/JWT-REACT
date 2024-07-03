@@ -9,7 +9,7 @@ const GitHubButton = () => {
     };
 
     const handleGitHubLogin = () => {
-        window.location.href = "http://localhost:5000/auth/github";
+        window.location.href = "https://jwt-node.onrender.com/auth/github";
     };
     return (
         <div className="github-button">

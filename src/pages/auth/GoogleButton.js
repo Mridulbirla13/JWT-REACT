@@ -8,7 +8,7 @@ const GoogleButton = () => {
     };
 
     const handleGoogleLogin = () => {
-        window.location.href = "http://localhost:5000/auth/google";
+        window.location.href = "https://jwt-node.onrender.com/auth/google";
     };
 
     return (
