@@ -8,7 +8,7 @@ const GoogleButton = () => {
     };
 
     const handleGoogleLogin = () => {
-        window.location.href = "https://jwt-react.vercel.app/auth/google";
+        window.location.href = "https://jwt-node.onrender.com/auth/google";
     };
 
     return (

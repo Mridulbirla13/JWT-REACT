@@ -12,7 +12,7 @@ const ResetPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch(`https://jwt-react.vercel.app/auth/reset-password/${token}`, {
+        const response = await fetch(`https://jwt-node.onrender.com/auth/reset-password/${token}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
