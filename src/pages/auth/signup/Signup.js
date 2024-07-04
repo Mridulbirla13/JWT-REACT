@@ -30,7 +30,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://jwt-node.onrender.com/user/register",{
+      const response = await fetch("https://jwt-react.vercel.app/user/register",{
         method:"POST",
         headers:{
           "Content-Type":"application/json"

@@ -9,7 +9,7 @@ const GitHubButton = () => {
     };
 
     const handleGitHubLogin = () => {
-        window.location.href = "https://jwt-node.onrender.com/auth/github";
+        window.location.href = "https://jwt-react.vercel.app/auth/github";
     };
     return (
         <div className="github-button">

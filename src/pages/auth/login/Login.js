@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import GoogleButton from '../GoogleButton';
 import GitHubButton from '../GitHubButton';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./Login.css";
 
 const Login = () => {
@@ -31,7 +31,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://jwt-node.onrender.com/auth/login",{
+      const response = await fetch("https://jwt-react.vercel.app/auth/login",{
         method:"POST",
         headers:{
           "Content-Type":"application/json"
@@ -75,18 +75,18 @@ const Login = () => {
           <Form.Check type="checkbox" label="Show Password" onChange={handleShowPassword} checked={showPassword} />
         </Form.Group>
         <div className="btn">
-        <Button variant="primary" type="submit">
-          Login
-        </Button>
+          <Button variant="primary" type="submit">
+            Login
+          </Button>
         </div>
         <div className="gauth">
           <GoogleButton />
           <GitHubButton />
         </div>
       </Form>
-      {/* <div className="mt-3">
+        <div className="mt-3">
           <Link to="/forgot-password" className='fgtxt'>Forgot Password?</Link>
-        </div> */}
+        </div>
       </div>
     </div>
   )

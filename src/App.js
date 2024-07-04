@@ -3,8 +3,8 @@ import Login from './pages/auth/login/Login';
 import Signup from './pages/auth/signup/Signup';
 import Navbar from './pages/Navibar/Navibar';
 import Dashboard from './pages/dashboard/Dashboard';
-// import ForgotPassword from './pages/auth/login/ForgotPassword';
-// import ResetPassword from './pages/auth/login/resetPassword';
+import ForgotPassword from './pages/auth/login/ForgotPassword';
+import ResetPassword from './pages/auth/login/ResetPassword';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
  
@@ -24,8 +24,8 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/login" element = {<Login></Login>}></Route>
-        {/* <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password" element={<ResetPassword />} /> */}
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route path="/register" element = {<Signup></Signup>}></Route>
         <Route path="/dashboard" element = {<Dashboard />}></Route>
         <Route path="/" element={<Navigate to = "/register"/>}></Route>
